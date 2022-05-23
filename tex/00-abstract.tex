@@ -1,0 +1,31 @@
+% Также можно использовать \Referat, как в оригинале
+\begin{abstract}
+
+    Отчет содержит \pageref{LastPage}\,стр.%
+    \ifnum \totfig >0
+    , \totfig~рис.%
+    \fi
+    \ifnum \tottab >0
+    , \tottab~табл.%
+    \fi
+    %
+    \ifnum \totbib >0
+    , \totbib~источн.%
+    \fi
+    %
+    \ifnum \totapp >0
+    , \totapp~прил.%
+    \else
+    .%
+    \fi
+
+    \textbf{Ключевые слова: информационная безопасность, дистанционное образование, CTF-соревнования, операционная система Linux, прокторинг.}
+
+
+
+\end{abstract}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "rpz"
+%%% End:
