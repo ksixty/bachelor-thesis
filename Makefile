@@ -2,7 +2,7 @@
 
 # LATEX=xelatex -interaction=nonstopmode -shell-escape
 LATEX=pdflatex
-TD=./utils/texdepend
+$TD=./utils/texdepend
 GSCONV=./utils/gsconv.sh
 D2T=dot2tex -f pgf --crop --docpreamble "\usepackage[T2A]{fontenc} \usepackage[utf8]{inputenc} \usepackage[english, russian]{babel}"
 PDFTRIMWHITE=pdfcrop
@@ -46,9 +46,9 @@ PARTS_DEPS=$(PARTS_TEX:tex/%=$(DEPS)/%-deps.mk)
 MAIN_DEP=$(DEPS)/$(MAINTEX).tex-deps.mk
 -include $(MAIN_DEP)
 
-$(DEPS)/%-deps.mk: $(TEX)/% Makefile
-	mkdir -p $(DEPS)
-	(/bin/echo -n "$(PDF): " ; $(TD) -print=fi -format=1 $< | grep -v '^#' | xargs /bin/echo) > $@
+#$(DEPS)/%-deps.mk: $(TEX)/% Makefile
+#	mkdir -p $(DEPS)
+#	(/bin/echo -n "$(PDF): " ; $(TD) -print=fi -format=1 $< | grep -v '^#' | xargs /bin/echo) > $@
 
 $(PDF): $(TEX)/$(MAINTEX).tex $(STYLES) $(BIBFILE)
 	cd tex && $(LATEX) $(MAINTEX)
