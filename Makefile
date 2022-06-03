@@ -91,7 +91,7 @@ clean:
 	find $(TEX)/ -regextype posix-egrep -type f ! -regex ".*\.(sty|tex|clo|cls|bib|bst|gitignore)" -exec $(RM) {} \; ;
 #	$(RM) $(DIA)/*.pdf $(DIA)/*.eps
 	$(RM) -r $(DEPS)
-	$(RM) -r $(INC)
+#	$(RM) -r $(INC)
 
 printpdfs: $(PDF)
 	$(GSCONV) $(PDF)

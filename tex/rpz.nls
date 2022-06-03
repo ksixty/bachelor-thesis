@@ -2,15 +2,14 @@
 \begin{thenomenclature} 
 \nomgroup{X}
   \item [{Кибербезопасность}]\begingroup совокупность методов и практик защиты от атак злоумышленников для компьютеров, серверов, мобильных устройств, электронных систем, сетей и данных.\nomeqref {1.0}\nompageref{7}
-  \item [{Неопределённость параллелизма}]\begingroup ошибка проектирования многопоточной системы или приложения, при которой работа системы или приложения зависит от того, в каком порядке выполняются части кода.\nomeqref {1.0}\nompageref{15}
-  \item [{борда}]\begingroup \textit {(англ. board, буквально «доска»)} --- программная платформа для получения условий задач и сдачи флагов в CTF-соревнованиях вида jeopardy..\nomeqref {1.0}\nompageref{15}
+  \item [{Метаданные}]\begingroup \textit (от греч. μετά, дословно: «данные о данных») — дополнительная сопровождающая информация, как правила обладающая хорошо выраженной структурой..\nomeqref {1.0}\nompageref{12}
+  \item [{Патч}]\begingroup информация, предназначенная для автоматизированного внесения определённых изменений в компьютерные файлы. Как правило, в программы, с целью изменения их функциональности либо исправления ошибок.\nomeqref {1.0}\nompageref{8}
 \nomgroup{Y}
   \item [{ICPC}]\begingroup International Collegiate Programming Contest ""--- Международная студенческая олимпиада по программированию.\nomeqref {1.0}\nompageref{7}
   \item [{CTF}]\begingroup capture the flag ""--- формат соревнований по защите информации «захват флага».\nomeqref {1.0}\nompageref{7}
   \item [{ОС}]\begingroup Операционная система.\nomeqref {1.0}\nompageref{13}
   \item [{ПО}]\begingroup Программное обеспечение.\nomeqref {1.0}\nompageref{13}
-  \item [{ХМАО-Югра}]\begingroup Ханты-Мансийский автономный округ — Югра.\nomeqref {1.0}\nompageref{13}
-  \item [{РСОШ}]\begingroup Российский совет олимпиад школьников.\nomeqref {1.0}\nompageref{13}
-  \item [{TCP}]\begingroup transmission control protocol --- протокол управления передачей.\nomeqref {1.0}\nompageref{15}
+  \item [{ХМАО-Югра}]\begingroup Ханты-Мансийский автономный округ — Югра.\nomeqref {1.0}\nompageref{14}
+  \item [{РСОШ}]\begingroup Российский совет олимпиад школьников.\nomeqref {1.0}\nompageref{15}
 
 \end{thenomenclature}
