@@ -2,7 +2,7 @@
 
 % 1. Стиль и язык
 \documentclass[pscyr, 12pt]{G7-32} % Стиль (по умолчанию размер шрифта 14pt)
-
+\usepackage{placeins}
 % Остальные стандартные настройки убраны в preamble.inc.tex.
 \include{preamble.inc}
 
@@ -47,7 +47,7 @@
 % \nobreakingbeforechapters
 % \breakingbeforechapters
 
-\include{00-abstract}
+%\include{00-abstract}
 
 \tableofcontents
 
@@ -58,7 +58,7 @@
 \mainmatter % это включает нумерацию глав и секций в документе ниже
 
 \include{10-analysis}
-% \include{20-theory}
+\include{20-theory}
 %\include{30-practice}
 
 \backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и

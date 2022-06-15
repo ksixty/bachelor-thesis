@@ -51,6 +51,7 @@ MAIN_DEP=$(DEPS)/$(MAINTEX).tex-deps.mk
 #	(/bin/echo -n "$(PDF): " ; $(TD) -print=fi -format=1 $< | grep -v '^#' | xargs /bin/echo) > $@
 
 $(PDF): $(TEX)/$(MAINTEX).tex $(STYLES) $(BIBFILE)
+	cp -r graphics/* $(INC)/*
 	cd tex && $(LATEX) $(MAINTEX)
 	cd tex && bibtex $(MAINTEX)
 	cd tex && makeindex $(MAINTEX).nlo -s nomencl.ist -o $(MAINTEX).nls
