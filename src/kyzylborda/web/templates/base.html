@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <!--link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png')}}"-->
+        <link href="{{ url_for('static', filename='style.css', v=1) }}"
+              type="text/css" rel="stylesheet" />
+        {% if redirect is not none %}
+            <!--meta http-equiv="refresh" content="3;url={{ redirect }}" /-->
+        {% endif %}
+    </head>
+    <body>
+        <header>
+            <div class="item item-logo">
+                <a href="{{ url_for('root') }}">
+                    <img src="https://teamteam.dev/assets/img/logo-small-white.svg" />
+                </a>
+            </div>
+            {% if current_user.is_authenticated %}
+                <div class="item item-flag">
+                    <form method="post" action="{{ url_for('send_flag') }}">
+                        {{ g.flag_form.csrf_token }}
+                        {{ g.flag_form.flag(placeholder='teamteam_[A-Za-z0-9_]+', autocomplete='off') }}
+                        <button>{% trans %}Send{% endtrans %}</button>
+                    </form>
+                </div>
+                <div class="item item-wide"></div>
+                <div class="item item-link">
+                </div>
+            {% endif %}
+        </header>
+
+        {% for extra_error in errors %}
+            <p class="fail">{{ extra_error }}</p>
+        {% endfor %}
+        {% if current_user.is_authenticated %}
+            {% for field_name, field_errors in g.flag_form.errors|dictsort if field_errors %}
+                {% for error in field_errors %}
+                    <p class="fail">{{ g.flag_form[field_name].label }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+          {% block footer %}
+          {% if current_user.is_authenticated %}
+            <p class="muted muted-exit">
+                {% trans %}You are logged in as{% endtrans %}
+                <em>{{ current_user.user.name }}</em>{% trans %}, feel free to log out, though:{% endtrans %}
+                <a href="{{ url_for('logout') }}" class="exit"><img src="/static/graphic/exit.svg" alt="{% trans %}Log out{% endtrans %}."></a>
+            </p>
+          {% else %}
+          {% if config.get("REGISTRATION_ENABLED", True) %}
+          <p><a href="{{ url_for('signup') }}">{% trans %}Sign up{% endtrans %}</a>.
+            <a href="{{ url_for('reset_token') }}">{% trans %}Get new access link{% endtrans %}</a></p>
+          {% endif %}
+          {% endif %}
+          <p class="muted">{% trans %}So it goes.{% endtrans %}</p>
+          {% endblock %}
+        </footer>
+
+    <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//track.ttc.tf/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</body>
+</html>

@@ -121,9 +121,10 @@ in {
       description = "SSH reverse proxy.";
       wantedBy = [ "multi-user.target" ];
       after = [ "network-online.target" ];
-      path = with pkgs; [ openssh setHostname inotify-tools config.systemd.package ];
+      path = with pkgs; [ openssh setHostname inotify-tools netcat config.systemd.package ];
       serviceConfig = {
         Restart = "always";
+        Type = "forking";
         RestartSec = 5;
         PrivateTmp = true;
       };
@@ -131,9 +132,19 @@ in {
         set -euET -o pipefail
         shopt -s inherit_errexit
 
+        # Find out of a port is opened.
+        if nc -zw10 ${cfg.proctorHost} 22; then
+          server_port="22"
+        elif nc -zw10 ${cfg.proctorHost} 13370; then
+          server_port="13370"
+        else
+          echo "Can't reach proctoring host; check that network is active and port 22 or 13370 is allowed." >&2
+          exit 1
+        fi
+
         # Open tunnel.
         openSsh() {
-          ssh -o ServerAliveInterval=15 -fNMS /tmp/ssh schoolos-proxy@${cfg.proctorHost} "$@"
+          ssh -p "$server_port" -o ServerAliveInterval=15 -fNMS /tmp/ssh schoolos-proxy@${cfg.proctorHost} "$@"
         }
         callSsh() {
           ssh -S /tmp/ssh placeholder "$@"
@@ -170,11 +181,15 @@ in {
         # Send my mapping.
         machine_id="$(cat /etc/machine-id)"
         tag="$(cat /etc/schoolos-tag 2>/dev/null || true)"
-        while true; do
-          callSsh -- update "$machine_id" "$port" "$tag"
-          # Wait while checking that SSH control socket is still alive.
-          inotifywait -qqt 30 /tmp/ssh || true
-        done
+        echo "$server_port" > /run/schoolos-server-port
+
+        ( (
+          while true; do
+            callSsh -- update "$machine_id" "$port" "$tag"
+            # Wait while checking that SSH control socket is still alive.
+            inotifywait -qqt 30 /tmp/ssh || true
+          done
+        ) & ) &
       '';
     };
 
@@ -211,11 +226,13 @@ in {
     systemd.services.schoolos-upload-screencasts = {
       description = "Upload screencasts.";
       path = with pkgs; [ openssh lsof ];
-      after = [ "network-online.target" ];
+      after = [ "network-online.target" "schoolos-ssh-proxy.service" ];
+      wants = [ "schoolos-ssh-proxy.service" ];
       serviceConfig = {
         Type = "oneshot";
       };
       script = ''
+        server_port="$(cat /run/schoolos-server-port)"
         casts="$(ls /var/lib/schoolos-screencast | sort)"
         if [ -n "$casts" ]; then
           for cast in $casts; do
@@ -257,7 +274,7 @@ in {
             if [ -e ~/ovas/"$fname.lock" ]; then
               # If an import was in progress before, remove current VM; most likely it's broken.
               echo "Removing VM that wasn't fully imported"
-              VBoxManage unregister --delete "$vmname" || true
+              VBoxManage unregistervm --delete "$vmname" || true
             else
               should_install="0"
             fi

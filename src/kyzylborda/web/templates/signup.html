@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+        {% for error in field_errors %}
+            <p class="fail">{{ form[field_name].label }}: {{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+
+    <form method="post">
+        {{ form.csrf_token }}
+        <p>{{ form.email.label }} {{ form.email }}</p>
+        <p>{{ form.name.label }} {{ form.name }}</p>
+        <p>{{ form.consent }} {{ form.consent.label }}</p>
+        <input type="submit" value="{% trans %}Proceed{% endtrans %}" />
+    </form>
+{% endblock %}

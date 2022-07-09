@@ -1,0 +1,224 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-10-24 18:15+0300\n"
+"PO-Revision-Date: 2020-04-06 00:35+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: src/kyzylborda/web/__init__.py:100
+msgid "Default"
+msgstr "По умолчанию"
+
+#: src/kyzylborda/web/tasks.py:36
+msgid "Count"
+msgstr "Количество"
+
+#: src/kyzylborda/web/tasks.py:40
+msgid "Flag"
+msgstr "Флаг"
+
+#: src/kyzylborda/web/tasks.py:123 src/kyzylborda/web/tasks.py:126
+msgid "Invalid flag."
+msgstr "Неверный флаг."
+
+#: src/kyzylborda/web/tasks.py:128
+msgid "Task has already been solved."
+msgstr "Задача уже была решена."
+
+#: src/kyzylborda/web/tasks.py:131
+msgid "Your task is in another castle, go submit there."
+msgstr "Флаг не для этого таска: вот где таск прочитали, туда и идите!"
+
+#: src/kyzylborda/web/tasks.py:133
+msgid "The flag is correct, but the contest has ended."
+msgstr "Время приёма закончилось (но флаг засчитан)."
+
+#: src/kyzylborda/web/tasks.py:149
+msgid "Hint not found."
+msgstr "Подсказка не найдена."
+
+#: src/kyzylborda/web/tasks.py:151
+msgid "Hint has already been granted."
+msgstr "Вы уже получили эту подсказку."
+
+#: src/kyzylborda/web/tasks.py:153
+msgid "You can't get hints for solved tasks."
+msgstr "Вы не можете получить подсказки на решённые задачи."
+
+#: src/kyzylborda/web/users.py:32 src/kyzylborda/web/users.py:43
+msgid "E-mail"
+msgstr "Эл. почта"
+
+#: src/kyzylborda/web/users.py:33
+msgid "Team name"
+msgstr "Название команды"
+
+#: src/kyzylborda/web/users.py:34
+msgid "I agree to Privacy Policy"
+msgstr "Даю согласие на обработку персональных данных"
+
+#: src/kyzylborda/web/users.py:38
+msgid "User name"
+msgstr "Имя пользователя"
+
+#: src/kyzylborda/web/users.py:39
+msgid "Password"
+msgstr "Пароль"
+
+#: src/kyzylborda/web/users.py:112
+msgid "Your link to access the board"
+msgstr "Ваша ссылка для доступа к доске"
+
+#: src/kyzylborda/web/users.py:209
+msgid "Name already exists."
+msgstr "Имя уже существует."
+
+#: src/kyzylborda/web/users.py:212
+msgid "Email already exists, just in case we have resent you your token."
+msgstr ""
+"Такая почта уже есть, на всякий случай мы переотправили вам ссылку для "
+"входа."
+
+#: src/kyzylborda/web/users.py:214
+msgid "Name or email already exist."
+msgstr "Имя или почта уже существуют."
+
+#: src/kyzylborda/web/users.py:224
+msgid "Email sending is disabled."
+msgstr ""
+
+#: src/kyzylborda/web/users.py:235
+msgid "User not found."
+msgstr "Пользователь не найден."
+
+#: src/kyzylborda/web/users.py:241
+msgid "Reset your access token"
+msgstr "Сброс токена для входа"
+
+#: src/kyzylborda/web/templates/ask_hint_error.html:10
+msgid "There was a problem giving a hint. We'll redirect you back."
+msgstr "С получением подсказки возникла беда. Мы перенаправим вас назад."
+
+#: src/kyzylborda/web/templates/base.html:25
+msgid "Send"
+msgstr "Сдать флаг"
+
+#: src/kyzylborda/web/templates/base.html:51
+msgid "Chat for this event"
+msgstr "Чат соревнования"
+
+#: src/kyzylborda/web/templates/base.html:54
+msgid "You are logged in as"
+msgstr "Вы сдаёте флаги как"
+
+#: src/kyzylborda/web/templates/base.html:55
+msgid ", feel free to log out, though:"
+msgstr ". Если вы — не вы, то вы выйдите:"
+
+#: src/kyzylborda/web/templates/base.html:56
+msgid "Log out"
+msgstr "Выйти"
+
+#: src/kyzylborda/web/templates/base.html:60
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: src/kyzylborda/web/templates/base.html:61
+msgid "Get new access link"
+msgstr "Получить новую ссылку для доступа"
+
+#: src/kyzylborda/web/templates/base.html:64
+msgid "So it goes."
+msgstr "Такие дела."
+
+#: src/kyzylborda/web/templates/board.html:41
+msgid "Team"
+msgstr "Команда"
+
+#: src/kyzylborda/web/templates/board.html:42
+#: src/kyzylborda/web/templates/scores.html:8
+msgid "Points"
+msgstr "Очки"
+
+#: src/kyzylborda/web/templates/board.html:43
+#: src/kyzylborda/web/templates/scores.html:9
+msgid "Last flag"
+msgstr "Последний флаг"
+
+#: src/kyzylborda/web/templates/password_login.html:16
+#: src/kyzylborda/web/templates/reset_token.html:7
+#: src/kyzylborda/web/templates/signup.html:15
+msgid "Proceed"
+msgstr "Продолжить"
+
+#: src/kyzylborda/web/templates/reset_token_email.txt:1
+#: src/kyzylborda/web/templates/token_email.txt:1
+msgid "Hi"
+msgstr "Привет"
+
+#: src/kyzylborda/web/templates/reset_token_email.txt:3
+msgid "To reset your access token follow this link"
+msgstr "Чтобы сбросить ваш токен доступа проследуйте по ссылке"
+
+#: src/kyzylborda/web/templates/reset_token_email.txt:7
+msgid "If you didn't request a reset, contact us!"
+msgstr "Если вы не запрашивали сброс, напишите нам!"
+
+#: src/kyzylborda/web/templates/reset_token_sent.html:4
+#: src/kyzylborda/web/templates/signup_sent.html:4
+msgid "We sent you an e-mail. Open it and follow the link."
+msgstr "Мы отправили вам письмо. Откройте его и проследуйте по ссылке."
+
+#: src/kyzylborda/web/templates/scores.html:7
+msgid "User"
+msgstr "Участник"
+
+#: src/kyzylborda/web/templates/send_flag_error.html:4
+msgid "There was a problem with your flag. We'll redirect you back."
+msgstr "Случилась беда с вашим флагом. Мы перенаправим вас назад."
+
+#: src/kyzylborda/web/templates/task.html:9
+msgid "Task is still being generated for you!"
+msgstr "Задание для вас ещё создаётся! Обновите страницу."
+
+#: src/kyzylborda/web/templates/task.html:15
+msgid "Flush"
+msgstr "Сбросить"
+
+#: src/kyzylborda/web/templates/task.html:19
+msgid "Pregenerated tasks"
+msgstr "Сгенерированные заранее задания"
+
+#: src/kyzylborda/web/templates/task.html:22
+msgid "Pregenerate"
+msgstr "Сгенерировать"
+
+#: src/kyzylborda/web/templates/task.html:43
+msgid "Hints"
+msgstr "Подсказки"
+
+#: src/kyzylborda/web/templates/task.html:51
+msgid "Request"
+msgstr "Запросить"
+
+#: src/kyzylborda/web/templates/task.html:57
+msgid "Task author"
+msgstr "Автор задания"
+
+#: src/kyzylborda/web/templates/token_email.txt:3
+msgid "To login into scoreboard use this link"
+msgstr "Чтобы зайти на доску, используйте эту ссылку"

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+        {% for error in field_errors %}
+            <p class="fail">{{ form[field_name].label }}: {{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+
+    {% trans %}There was a problem giving a hint. We'll redirect you back.{% endtrans %}
+{% endblock %}

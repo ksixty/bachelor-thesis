@@ -5,9 +5,25 @@
 % bibtex rpz
 % pdflatex rpz
 
-\bibliographystyle{gost780u}
-\bibliography{rpz}
+% \bibliographystyle{gost780u}
+% \bibliography{rpz}
 
+\setlength\bibhang{0pt}
+
+\defbibenvironment{bibliography}
+{\list
+{\printfield[labelnumberwidth]{labelnumber}}
+{\setlength{\labelwidth}{\labelnumberwidth}%
+\setlength{\leftmargin}{0cm}%
+\setlength{\labelsep}{\biblabelsep}%
+%\addtolength{\leftmargin}{\labelsep}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}%
+\renewcommand*{\makelabel}[1]{\hss##1}}
+{\endlist}
+{\item}
+
+\printbibliography[heading=bibintoc,title={Список литературы}]
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "rpz"

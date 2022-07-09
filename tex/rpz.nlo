@@ -1,24 +1,34 @@
-\nomenclatureentry{Y{001}АС@[{АС}]\begingroup автоматизированная система.\nomeqref {0.0}|nompageref}{6}
-\nomenclatureentry{Y{002}ICPC@[{ICPC}]\begingroup International Collegiate Programming Contest ""--- Международная студенческая олимпиада по программированию.\nomeqref {1.0}|nompageref}{7}
-\nomenclatureentry{XКибербезопасность@[{Кибербезопасность}]\begingroup совокупность методов и практик защиты от атак злоумышленников для компьютеров, серверов, мобильных устройств, электронных систем, сетей и данных.\nomeqref {1.0}|nompageref}{7}
-\nomenclatureentry{Y{003}CTF@[{CTF}]\begingroup capture the flag ""--- формат соревнований по защите информации «захват флага».\nomeqref {1.0}|nompageref}{7}
-\nomenclatureentry{XПатч@[{Патч}]\begingroup информация, предназначенная для автоматизированного внесения определённых изменений в компьютерные файлы. Как правило, в программы, с целью изменения их функциональности либо исправления ошибок.\nomeqref {1.0}|nompageref}{8}
-\nomenclatureentry{XМетаданные@[{Метаданные}]\begingroup \textit {(от греч., дословно: «данные о данных»)} — дополнительная сопровождающая информация, как правила обладающая хорошо выраженной структурой..\nomeqref {1.0}|nompageref}{12}
-\nomenclatureentry{Y{004}ОС@[{ОС}]\begingroup Операционная система.\nomeqref {1.0}|nompageref}{13}
-\nomenclatureentry{Y{005}ПО@[{ПО}]\begingroup Программное обеспечение.\nomeqref {1.0}|nompageref}{13}
-\nomenclatureentry{Y{006}ХМАО-Югра@[{ХМАО-Югра}]\begingroup Ханты-Мансийский автономный округ — Югра.\nomeqref {1.0}|nompageref}{14}
-\nomenclatureentry{Y{007}РСОШ@[{РСОШ}]\begingroup Российский совет олимпиад школьников.\nomeqref {1.0}|nompageref}{15}
-\nomenclatureentry{XРегулярное выражение@[{Регулярное выражение}]\begingroup текстовая строка особого формата, задающая конечный автомат для поиска определённой подстроки или подстрок в тексте.\nomeqref {2.0}|nompageref}{19}
-\nomenclatureentry{XМодуль системы@[{Модуль системы}]\begingroup независимая подсистема, взаимодействующая с другими компонентами системы.\nomeqref {2.0}|nompageref}{20}
-\nomenclatureentry{Y{008}TCP@[{TCP}]\begingroup (англ. transmission control protocol) — сетевой протокол транспортного уровня, используемый для передачи данных с подтверждением получения..\nomeqref {2.0}|nompageref}{21}
-\nomenclatureentry{XБорда@[{Борда}]\begingroup \textit {(англ. board, буквально «доска»)} --- программная платформа для получения условий задач и сдачи флагов в CTF-соревнованиях вида jeopardy.\nomeqref {2.0}|nompageref}{21}
-\nomenclatureentry{XНеопределённость параллелизма@[{Неопределённость параллелизма}]\begingroup ошибка проектирования многопоточной системы или приложения, при которой работа системы или приложения зависит от того, в каком порядке выполняются части кода.\nomeqref {2.0}|nompageref}{23}
-\nomenclatureentry{Y{009}IP@[{IP}]\begingroup Internet Protocol.\nomeqref {2.0}|nompageref}{24}
-\nomenclatureentry{Y{010}URL@[{URL}]\begingroup Uniform Resource Locator.\nomeqref {2.0}|nompageref}{24}
-\nomenclatureentry{XСетевая разведка \textit {(англ. OSINT, open-source intelligence)}@[{Сетевая разведка \textit {(англ. OSINT, open-source intelligence)}}]\begingroup поиск информации в открытых источниках.\nomeqref {2.0}|nompageref}{24}
-\nomenclatureentry{XХеш-функция@[{Хеш-функция}]\begingroup функция, отображающая входное слово конечной длины в конечном алфавите в слово заданной, обычно фиксированной длины.\nomeqref {2.0}|nompageref}{29}
-\nomenclatureentry{XКоллизия@[{Коллизия}]\begingroup для хеш-функции $h$ — такая пара значений $x, y, x \ne y$ её аргумента, что $h(x) = h(y)$.\nomeqref {2.0}|nompageref}{29}
-\nomenclatureentry{XУникальный (прямой) идентификатор участника@[{Уникальный (прямой) идентификатор участника}]\begingroup данные, позволяющие однозначно определить участника в среде для проведения испытаний.\nomeqref {2.0}|nompageref}{29}
-\nomenclatureentry{XКосвенный идентификатор участника@[{Косвенный идентификатор участника}]\begingroup значение хеш-функции от единственного уникального идентификатора, который хранится в борде.\nomeqref {2.0}|nompageref}{29}
-\nomenclatureentry{XТокен@[{Токен}]\begingroup пседвослучайная последовательность символов с достаточной для надёжной аутентификации энтропией.\nomeqref {2.0}|nompageref}{30}
-\nomenclatureentry{Y{011}ИС@[{ИС}]\begingroup информационная система.\nomeqref {2.0}|nompageref}{30}
+\nomenclatureentry{Y{001}АС@[{АС}]\begingroup автоматизированная система.\nomeqref {0.0}|nompageref}{11}
+\nomenclatureentry{Y{002}ICPC@[{ICPC}]\begingroup International Collegiate Programming Contest ""--- Международная студенческая олимпиада по программированию.\nomeqref {1.0}|nompageref}{12}
+\nomenclatureentry{XКибербезопасность@[{Кибербезопасность}]\begingroup совокупность методов и практик защиты от атак злоумышленников для компьютеров, серверов, мобильных устройств, электронных систем, сетей и данных.\nomeqref {1.0}|nompageref}{13}
+\nomenclatureentry{Y{003}CTF@[{CTF}]\begingroup capture the flag ""--- формат соревнований по защите информации «захват флага».\nomeqref {1.0}|nompageref}{13}
+\nomenclatureentry{XПатч@[{Патч}]\begingroup информация, предназначенная для автоматизированного внесения определённых изменений в компьютерные файлы. Как правило, в программы, с целью изменения их функциональности либо исправления ошибок.\nomeqref {1.0}|nompageref}{13}
+\nomenclatureentry{XМетаданные@[{Метаданные}]\begingroup \textit {(от греч., дословно: «данные о данных»)} — дополнительная сопровождающая информация, как правила обладающая хорошо выраженной структурой..\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{Y{004}ОС@[{ОС}]\begingroup Операционная система.\nomeqref {1.0}|nompageref}{20}
+\nomenclatureentry{Y{005}ПО@[{ПО}]\begingroup Программное обеспечение.\nomeqref {1.0}|nompageref}{20}
+\nomenclatureentry{Y{006}ХМАО-Югра@[{ХМАО-Югра}]\begingroup Ханты-Мансийский автономный округ — Югра.\nomeqref {1.0}|nompageref}{21}
+\nomenclatureentry{Y{007}РСОШ@[{РСОШ}]\begingroup Российский совет олимпиад школьников.\nomeqref {1.0}|nompageref}{22}
+\nomenclatureentry{XРегулярное выражение@[{Регулярное выражение}]\begingroup текстовая строка особого формата, задающая конечный автомат для поиска определённой подстроки или подстрок в тексте.\nomeqref {2.0}|nompageref}{26}
+\nomenclatureentry{XМодуль системы@[{Модуль системы}]\begingroup независимая подсистема, взаимодействующая с другими компонентами системы.\nomeqref {2.0}|nompageref}{28}
+\nomenclatureentry{Y{008}TCP@[{TCP}]\begingroup (англ. transmission control protocol) — сетевой протокол транспортного уровня, используемый для передачи данных с подтверждением получения.\nomeqref {2.0}|nompageref}{29}
+\nomenclatureentry{XБорда@[{Борда}]\begingroup \textit {(англ. board, буквально «доска»)}~--- программная платформа для получения условий задач и сдачи флагов в CTF-соревнованиях вида Jeopardy.\nomeqref {2.0}|nompageref}{29}
+\nomenclatureentry{XНеопределённость параллелизма@[{Неопределённость параллелизма}]\begingroup ошибка проектирования многопоточной системы или приложения, при которой работа системы или приложения зависит от того, в каком порядке выполняются части кода.\nomeqref {2.0}|nompageref}{31}
+\nomenclatureentry{Y{009}IP@[{IP}]\begingroup Internet Protocol.\nomeqref {2.0}|nompageref}{32}
+\nomenclatureentry{Y{010}URL@[{URL}]\begingroup Uniform Resource Locator.\nomeqref {2.0}|nompageref}{32}
+\nomenclatureentry{XСетевая разведка \textit {(англ. OSINT, open-source intelligence)}@[{Сетевая разведка \textit {(англ. OSINT, open-source intelligence)}}]\begingroup поиск информации в открытых источниках.\nomeqref {2.0}|nompageref}{32}
+\nomenclatureentry{XХеш-функция@[{Хеш-функция}]\begingroup функция, отображающая входное слово конечной длины в конечном алфавите в слово заданной, обычно фиксированной длины.\nomeqref {2.0}|nompageref}{38}
+\nomenclatureentry{XКоллизия@[{Коллизия}]\begingroup для хеш-функции $h$ — такая пара значений $x, y, x \ne y$ её аргумента, что $h(x) = h(y)$.\nomeqref {2.0}|nompageref}{38}
+\nomenclatureentry{XУникальный (прямой) идентификатор участника@[{Уникальный (прямой) идентификатор участника}]\begingroup данные, позволяющие однозначно определить участника в среде для проведения испытаний.\nomeqref {2.0}|nompageref}{38}
+\nomenclatureentry{XКосвенный идентификатор участника@[{Косвенный идентификатор участника}]\begingroup значение хеш-функции от единственного уникального идентификатора, который хранится в борде.\nomeqref {2.0}|nompageref}{38}
+\nomenclatureentry{XИнтерфейс@[{Интерфейс}]\begingroup совокупность средств, методов и правил взаимодействия между элементами системы.\nomeqref {2.0}|nompageref}{39}
+\nomenclatureentry{XТокен@[{Токен}]\begingroup пседвослучайная последовательность символов с достаточной для надёжной аутентификации энтропией.\nomeqref {2.0}|nompageref}{39}
+\nomenclatureentry{Y{011}ИС@[{ИС}]\begingroup информационная система.\nomeqref {2.0}|nompageref}{39}
+\nomenclatureentry{XПрокторинг@[{Прокторинг}]\begingroup процесс (автоматизированного) наблюдения за действиями участника испытаний.\nomeqref {2.0}|nompageref}{43}
+\nomenclatureentry{Y{012}ЭВМ@[{ЭВМ}]\begingroup электронно-вычислительная машина.\nomeqref {2.0}|nompageref}{46}
+\nomenclatureentry{Y{013}ГК РФ@[{ГК РФ}]\begingroup Гражданский кодекс Российской Федерации.\nomeqref {2.0}|nompageref}{46}
+\nomenclatureentry{XПакет (в пакетном менеджере)@[{Пакет (в пакетном менеджере)}]\begingroup особый архив, который содержит файлы (исходные коды либо исполняемые файлы) того или иного компонента ОС, а также метаданные, определяющие способ его установки в систему..\nomeqref {2.0}|nompageref}{47}
+\nomenclatureentry{Y{014}NAT@[{NAT}]\begingroup трансляция сетевых адресов.\nomeqref {2.0}|nompageref}{50}
+\nomenclatureentry{Y{015}ФСТЭК@[{ФСТЭК}]\begingroup федеральная служба по техническому и экспортному контролю.\nomeqref {2.0}|nompageref}{52}
+\nomenclatureentry{Y{016}HTTP@[{HTTP}]\begingroup (англ. hypertext transfer protocol) протокол передачи гипертекста.\nomeqref {3.0}|nompageref}{61}
+\nomenclatureentry{Y{017}UML@[{UML}]\begingroup (англ. unified modeling language) единый язык для моделирования.\nomeqref {3.0}|nompageref}{61}
+\nomenclatureentry{XПакет (в UML)@[{Пакет (в UML)}]\begingroup механизм общего назначения в языке UML для группировки элементов по семантическим связям в целях обеспечения наглядности структуры модели системы.\nomeqref {3.0}|nompageref}{61}

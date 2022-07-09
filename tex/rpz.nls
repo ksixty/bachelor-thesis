@@ -1,30 +1,40 @@
 
 \begin{thenomenclature} 
 \nomgroup{X}
-  \item [{Борда}]\begingroup \textit {(англ. board, буквально «доска»)} --- программная платформа для получения условий задач и сдачи флагов в CTF-соревнованиях вида jeopardy.\nomeqref {2.0}\nompageref{21}
-  \item [{Кибербезопасность}]\begingroup совокупность методов и практик защиты от атак злоумышленников для компьютеров, серверов, мобильных устройств, электронных систем, сетей и данных.\nomeqref {1.0}\nompageref{7}
-  \item [{Коллизия}]\begingroup для хеш-функции $h$ — такая пара значений $x, y, x \ne y$ её аргумента, что $h(x) = h(y)$.\nomeqref {2.0}\nompageref{29}
-  \item [{Косвенный идентификатор участника}]\begingroup значение хеш-функции от единственного уникального идентификатора, который хранится в борде.\nomeqref {2.0}\nompageref{29}
-  \item [{Метаданные}]\begingroup \textit {(от греч., дословно: «данные о данных»)} — дополнительная сопровождающая информация, как правила обладающая хорошо выраженной структурой..\nomeqref {1.0}\nompageref{12}
-  \item [{Модуль системы}]\begingroup независимая подсистема, взаимодействующая с другими компонентами системы.\nomeqref {2.0}\nompageref{20}
-  \item [{Неопределённость параллелизма}]\begingroup ошибка проектирования многопоточной системы или приложения, при которой работа системы или приложения зависит от того, в каком порядке выполняются части кода.\nomeqref {2.0}\nompageref{23}
-  \item [{Патч}]\begingroup информация, предназначенная для автоматизированного внесения определённых изменений в компьютерные файлы. Как правило, в программы, с целью изменения их функциональности либо исправления ошибок.\nomeqref {1.0}\nompageref{8}
-  \item [{Регулярное выражение}]\begingroup текстовая строка особого формата, задающая конечный автомат для поиска определённой подстроки или подстрок в тексте.\nomeqref {2.0}\nompageref{19}
-  \item [{Сетевая разведка \textit {(англ. OSINT, open-source intelligence)}}]\begingroup поиск информации в открытых источниках.\nomeqref {2.0}\nompageref{24}
-  \item [{Токен}]\begingroup пседвослучайная последовательность символов с достаточной для надёжной аутентификации энтропией.\nomeqref {2.0}\nompageref{30}
-  \item [{Уникальный (прямой) идентификатор участника}]\begingroup данные, позволяющие однозначно определить участника в среде для проведения испытаний.\nomeqref {2.0}\nompageref{29}
-  \item [{Хеш-функция}]\begingroup функция, отображающая входное слово конечной длины в конечном алфавите в слово заданной, обычно фиксированной длины.\nomeqref {2.0}\nompageref{29}
+  \item [{Борда}]\begingroup \textit {(англ. board, буквально «доска»)}~--- программная платформа для получения условий задач и сдачи флагов в CTF-соревнованиях вида Jeopardy.\nomeqref {2.0}\nompageref{26}
+  \item [{Интерфейс}]\begingroup совокупность средств, методов и правил взаимодействия между элементами системы.\nomeqref {2.0}\nompageref{36}
+  \item [{Кибербезопасность}]\begingroup совокупность методов и практик защиты от атак злоумышленников для компьютеров, серверов, мобильных устройств, электронных систем, сетей и данных.\nomeqref {1.0}\nompageref{10}
+  \item [{Коллизия}]\begingroup для хеш-функции $h$ — такая пара значений $x, y, x \ne y$ её аргумента, что $h(x) = h(y)$.\nomeqref {2.0}\nompageref{35}
+  \item [{Косвенный идентификатор участника}]\begingroup значение хеш-функции от единственного уникального идентификатора, который хранится в борде.\nomeqref {2.0}\nompageref{35}
+  \item [{Метаданные}]\begingroup \textit {(от греч., дословно: «данные о данных»)} — дополнительная сопровождающая информация, как правила обладающая хорошо выраженной структурой..\nomeqref {1.0}\nompageref{15}
+  \item [{Модуль системы}]\begingroup независимая подсистема, взаимодействующая с другими компонентами системы.\nomeqref {2.0}\nompageref{25}
+  \item [{Неопределённость параллелизма}]\begingroup ошибка проектирования многопоточной системы или приложения, при которой работа системы или приложения зависит от того, в каком порядке выполняются части кода.\nomeqref {2.0}\nompageref{28}
+  \item [{Пакет (в UML)}]\begingroup механизм общего назначения в языке UML для группировки элементов по семантическим связям в целях обеспечения наглядности структуры модели системы.\nomeqref {3.0}\nompageref{59}
+  \item [{Пакет (в пакетном менеджере)}]\begingroup особый архив, который содержит файлы (исходные коды либо исполняемые файлы) того или иного компонента ОС, а также метаданные, определяющие способ его установки в систему..\nomeqref {2.0}\nompageref{44}
+  \item [{Патч}]\begingroup информация, предназначенная для автоматизированного внесения определённых изменений в компьютерные файлы. Как правило, в программы, с целью изменения их функциональности либо исправления ошибок.\nomeqref {1.0}\nompageref{10}
+  \item [{Прокторинг}]\begingroup процесс (автоматизированного) наблюдения за действиями участника испытаний.\nomeqref {2.0}\nompageref{40}
+  \item [{Регулярное выражение}]\begingroup текстовая строка особого формата, задающая конечный автомат для поиска определённой подстроки или подстрок в тексте.\nomeqref {2.0}\nompageref{23}
+  \item [{Сетевая разведка \textit {(англ. OSINT, open-source intelligence)}}]\begingroup поиск информации в открытых источниках.\nomeqref {2.0}\nompageref{29}
+  \item [{Токен}]\begingroup пседвослучайная последовательность символов с достаточной для надёжной аутентификации энтропией.\nomeqref {2.0}\nompageref{36}
+  \item [{Уникальный (прямой) идентификатор участника}]\begingroup данные, позволяющие однозначно определить участника в среде для проведения испытаний.\nomeqref {2.0}\nompageref{35}
+  \item [{Хеш-функция}]\begingroup функция, отображающая входное слово конечной длины в конечном алфавите в слово заданной, обычно фиксированной длины.\nomeqref {2.0}\nompageref{35}
 \nomgroup{Y}
-  \item [{АС}]\begingroup автоматизированная система.\nomeqref {0.0}\nompageref{6}
-  \item [{ICPC}]\begingroup International Collegiate Programming Contest ""--- Международная студенческая олимпиада по программированию.\nomeqref {1.0}\nompageref{7}
-  \item [{CTF}]\begingroup capture the flag ""--- формат соревнований по защите информации «захват флага».\nomeqref {1.0}\nompageref{7}
-  \item [{ОС}]\begingroup Операционная система.\nomeqref {1.0}\nompageref{13}
-  \item [{ПО}]\begingroup Программное обеспечение.\nomeqref {1.0}\nompageref{13}
-  \item [{ХМАО-Югра}]\begingroup Ханты-Мансийский автономный округ — Югра.\nomeqref {1.0}\nompageref{14}
-  \item [{РСОШ}]\begingroup Российский совет олимпиад школьников.\nomeqref {1.0}\nompageref{15}
-  \item [{TCP}]\begingroup (англ. transmission control protocol) — сетевой протокол транспортного уровня, используемый для передачи данных с подтверждением получения..\nomeqref {2.0}\nompageref{21}
-  \item [{IP}]\begingroup Internet Protocol.\nomeqref {2.0}\nompageref{24}
-  \item [{URL}]\begingroup Uniform Resource Locator.\nomeqref {2.0}\nompageref{24}
-  \item [{ИС}]\begingroup информационная система.\nomeqref {2.0}\nompageref{30}
+  \item [{АС}]\begingroup автоматизированная система.\nomeqref {0.0}\nompageref{8}
+  \item [{ICPC}]\begingroup International Collegiate Programming Contest ""--- Международная студенческая олимпиада по программированию.\nomeqref {1.0}\nompageref{9}
+  \item [{CTF}]\begingroup capture the flag ""--- формат соревнований по защите информации «захват флага».\nomeqref {1.0}\nompageref{10}
+  \item [{ОС}]\begingroup Операционная система.\nomeqref {1.0}\nompageref{17}
+  \item [{ПО}]\begingroup Программное обеспечение.\nomeqref {1.0}\nompageref{17}
+  \item [{ХМАО-Югра}]\begingroup Ханты-Мансийский автономный округ — Югра.\nomeqref {1.0}\nompageref{18}
+  \item [{РСОШ}]\begingroup Российский совет олимпиад школьников.\nomeqref {1.0}\nompageref{19}
+  \item [{TCP}]\begingroup (англ. transmission control protocol) — сетевой протокол транспортного уровня, используемый для передачи данных с подтверждением получения.\nomeqref {2.0}\nompageref{26}
+  \item [{IP}]\begingroup Internet Protocol.\nomeqref {2.0}\nompageref{29}
+  \item [{URL}]\begingroup Uniform Resource Locator.\nomeqref {2.0}\nompageref{29}
+  \item [{ИС}]\begingroup информационная система.\nomeqref {2.0}\nompageref{36}
+  \item [{ЭВМ}]\begingroup электронно-вычислительная машина.\nomeqref {2.0}\nompageref{43}
+  \item [{ГК РФ}]\begingroup Гражданский кодекс Российской Федерации.\nomeqref {2.0}\nompageref{43}
+  \item [{NAT}]\begingroup трансляция сетевых адресов.\nomeqref {2.0}\nompageref{47}
+  \item [{ФСТЭК}]\begingroup федеральная служба по техническому и экспортному контролю.\nomeqref {2.0}\nompageref{49}
+  \item [{HTTP}]\begingroup (англ. hypertext transfer protocol) протокол передачи гипертекста.\nomeqref {3.0}\nompageref{59}
+  \item [{UML}]\begingroup (англ. unified modeling language) единый язык для моделирования.\nomeqref {3.0}\nompageref{59}
 
 \end{thenomenclature}

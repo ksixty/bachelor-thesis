@@ -3,8 +3,8 @@
 % Настройки стиля ГОСТ 7-32
 % Для начала определяем, хотим мы или нет, чтобы рисунки и таблицы нумеровались в пределах раздела, или нам нужна сквозная нумерация.
 \EqInChapter % формулы будут нумероваться в пределах раздела
-\TableInChapter % таблицы будут нумероваться в пределах раздела
-\PicInChapter % рисунки будут нумероваться в пределах раздела
+%\TableInChapter % таблицы будут нумероваться в пределах раздела
+%\PicInChapter % рисунки будут нумероваться в пределах раздела
 
 % Добавляем гипертекстовое оглавление в PDF
 \usepackage[
@@ -27,7 +27,7 @@ citecolor=black, menucolor=black, filecolor=black,
 % С такими оно полями оно работает по-умолчанию:
 % \RequirePackage[left=20mm,right=10mm,top=20mm,bottom=20mm,headsep=0pt,includefoot]{geometry}
 % Если вас тошнит от поля в 10мм --- увеличивайте до 20-ти, ну и про переплёт не забывайте:
-\geometry{right=10mm}
+\geometry{right=15mm}
 \geometry{left=30mm}
 \geometry{bottom=20mm}
 \geometry{ignorefoot}% считать от нижней границы текста
@@ -47,7 +47,7 @@ citecolor=black, menucolor=black, filecolor=black,
 \usepackage{paralist,array}
 
 %\setlength{\parskip}{1ex plus0.5ex minus0.5ex} % разрыв между абзацами
-\setlength{\parskip}{1ex} % разрыв между абзацами
+\setlength{\parskip}{0mm} % разрыв между абзацами
 \usepackage{blindtext}
 
 % Центрирование подписей к плавающим окружениям
@@ -64,3 +64,7 @@ name=Equation
 \fixEqndesc%
 }
 {\end{eqndescNoIndent}}
+
+\usepackage{pdflscape}
+
+%\usepackage{chngcntr}

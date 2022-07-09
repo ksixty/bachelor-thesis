@@ -1,10 +1,19 @@
 %% Преамбула TeX-файла
 
 % 1. Стиль и язык
-\documentclass[pscyr, 12pt]{G7-32} % Стиль (по умолчанию размер шрифта 14pt)
+\documentclass[times, 14pt]{G7-32} % Стиль (по умолчанию размер шрифта 14pt)
 \usepackage{placeins}
 % Остальные стандартные настройки убраны в preamble.inc.tex.
 \include{preamble.inc}
+
+\usepackage[
+  backend = biber,
+  style = gost-numeric,
+  language = auto,
+  hyperref = auto,
+  autolang = other
+]{biblatex}
+\addbibresource{rpz.bib}
 
 % Настройки листингов.
 \ifPDFTeX
@@ -19,13 +28,25 @@
 % Стиль титульного листа и заголовки
 \include{00-title}
 
+\makeatletter
+\renewcommand{\verbatim@font}{\ttfamily\small}
+\makeatother
+
+%% \usepackage{tocloft}[subfigure,titles]
+%% \setlength{\cftsecindent}{0pt}% Remove indent for \section
+%% \setlength{\cftsubsecindent}{0pt}% Remove indent for \subsection
+%% \setlength{\cftsubsubsecindent}{0pt}% Remove indent for \subsubsection
+
+\titleformat*{\section}{\normalfont\selectfont}
+\titleformat*{\subsection}{\normalfont\selectfont}
+\titleformat*{\subsubsection}{\normalfont\selectfont}
 
 \begin{document}
 
 
 \frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
 
-\maketitle %создает титульную страницу
+%\maketitle %создает титульную страницу
 
 
 %% \begin{executors}
@@ -45,9 +66,13 @@
 % По-умолчанию страница разрывается.
 
 % \nobreakingbeforechapters
-% \breakingbeforechapters
+\breakingbeforechapters
 
-%\include{00-abstract}
+\include{00-abstract}
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{6}
 
 \tableofcontents
 
@@ -59,21 +84,20 @@
 
 \include{10-analysis}
 \include{20-theory}
-%\include{30-practice}
+\include{30-practice}
 
 \backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и
 
-%\include{80-conclusion}%% заключение
-
+\include{40-conclusion}
 
 \include{81-biblio}
 
 
-%\appendix   % Тут идут приложения
+\appendix   % Тут идут приложения
 
-%\include{90-appendix1}
+\include{90-appendix1}
 
-%\include{91-appendix2}
+\include{91-appendix2}
 
 \end{document}
 

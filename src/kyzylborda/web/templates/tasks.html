@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<marquee><h1>Порошок уходи!</h1></marquee>
+{#
+    {% for task, summary in tasks %}
+        <p {% if summary.solved %}class="solved"{% endif %}>
+            <a href="{{ url_for('get_task', task_name=task.name) }}">
+                [{{ task.name }}] {{ task.title }}
+            </a>
+            ({{ task.category }} {{ task.points }})
+        </p>
+    {% endfor %}
+#}
+{% endblock %}

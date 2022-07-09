@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post">
+        {{ form.csrf_token }}
+        <p>{{ form.email.label }} {{ form.email }}</p>
+        <input type="submit" value="{% trans %}Proceed{% endtrans %}" />
+    </form>
+{% endblock %}

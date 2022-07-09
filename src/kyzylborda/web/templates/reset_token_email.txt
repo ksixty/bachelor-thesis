@@ -1,0 +1,10 @@
+{% trans %}Hi{% endtrans %},
+
+{% trans %}To reset your access token follow this link{% endtrans %}:
+
+{{ link }}
+
+{% trans %}If you didn't request a reset, contact us!{% endtrans %}
+
+-- 
+{{ title }}

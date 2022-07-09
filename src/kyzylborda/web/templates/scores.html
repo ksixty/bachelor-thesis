@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">{% trans %}User{% endtrans %}</th>
+                <th>{% trans %}Points{% endtrans %}</th>
+                <th>{% trans %}Last flag{% endtrans %}</th>
+                {% for task in tasks %}
+                    <th class="task">
+                        <span><a href="{{ url_for('get_task', task_name=task.name) }}">{{ task.name }}</a></span>
+                        <span>{{ task.points }}</span>
+                    </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in scores %}
+                <tr>
+                    <th>{{ loop.index }}</th>
+                    <th>{{ user.name }}</th>
+                    <td>{{ user.points }}</td>
+                    <td>{{ user.last_flag_time.astimezone(tz).strftime('%H:%M:%S') if user.last_flag_time else '' }}</td>
+                    {% for task in tasks %}
+                        <td>{{ user.tasks[task.name].points if task.name in user.tasks else '' }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

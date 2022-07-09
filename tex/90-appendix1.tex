@@ -1,13 +1,23 @@
-\chapter{Картинки}
+\chapter{Исходные коды модуля SchoolOS}
 \label{cha:appendix1}
 
-\blindtext
-\begin{figure}
-\centering
-\caption{Картинка в приложении. Страшная и ужасная.}
-\end{figure}
+\lstinputlisting[caption={flake.nix}]{inc/src/schoolos/flake.nix}
 
-%%% Local Variables: 
+\lstinputlisting[caption={client/default.nix}]{inc/src/schoolos/client/default.nix}
+\lstinputlisting[caption={client/module.nix}]{inc/src/schoolos/client/module.nix}
+\lstinputlisting[caption={client/platform.nix}]{inc/src/schoolos/client/platform.nix}
+\lstinputlisting[caption={client/usb.nix}]{inc/src/schoolos/client/usb.nix}
+
+\lstinputlisting[caption={server/default.nix}]{inc/src/schoolos/server/default.nix}
+\lstinputlisting[caption={server/handle-proxy.sh}]{inc/src/schoolos/server/handle-proxy.sh}
+\lstinputlisting[caption={server/handle-proctor.sh}]{inc/src/schoolos/server/handle-proctor.sh}
+\lstinputlisting[caption={server/ssh-to-client.sh}]{inc/src/schoolos/server/ssh-to-client.sh}
+\lstinputlisting[caption={server/remote-customize.sh}]{inc/src/schoolos/server/remote-customize.sh}
+
+\lstinputlisting[caption={customize-image.sh}]{inc/src/schoolos/customize-image.sh}
+\lstinputlisting[caption={prepare-provision.sh}]{inc/src/schoolos/prepare-provision.sh}
+
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "rpz"
-%%% End: 
+%%% End:

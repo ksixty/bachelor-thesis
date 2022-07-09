@@ -1,13 +1,18 @@
-\chapter{Еще картинки}
-\label{cha:appendix2}
-\blindtext
+\chapter{Исходные коды модуля Kyzylborda}
+\label{cha:appendix1}
 
-\begin{figure}
-\centering
-\caption{Еще одна картинка, ничем не лучше предыдущей. Но надо же как-то заполнить место.}
-\end{figure}
+\lstinputlisting[caption={db.py: модель данных}]{inc/src/kyzylborda/db.py}
+\lstinputlisting[caption={flags.py: сущность <<Флаг>>}]{inc/src/kyzylborda/flags.py}
+\lstinputlisting[caption={generate.py: генерация вариантов динамических задач}]{inc/src/kyzylborda/generate.py}
 
-%%% Local Variables: 
+\lstinputlisting[caption={supervisor/\_\_init\_\_.py: супервизия для фоновых процессов при ресурсах задач}]{inc/src/kyzylborda/supervisor/\_\_init\_\_.py}
+\lstinputlisting[caption={supervisor/daemon.py: запуск фоновых процессов}]{inc/src/kyzylborda/supervisor/daemon.py}
+\lstinputlisting[caption={supervisor/redirect.py: автоматическая публикация сетевых ресурсов}]{inc/src/kyzylborda/supervisor/redirect.py}
+
+\lstinputlisting[caption={web/\_\_init\_\_.py: веб-интерфейс}]{inc/src/kyzylborda/web/\_\_init\_\_.py}
+\lstinputlisting[caption={web/scoring.py: рейтинг}]{inc/src/kyzylborda/web/scoring.py}
+\lstinputlisting[caption={web/users.py: сущность <<Пользователь>>}]{inc/src/kyzylborda/web/users.py}
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "rpz"
-%%% End: 
+%%% End:

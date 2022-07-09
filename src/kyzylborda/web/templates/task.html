@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="narrow">
+    <h1>{{ task.title }}</h1>
+    <h2>{{ task.category }} {{ task.points }}</h2>
+
+    {% if not summary %}
+        <p class="fail">{% trans %}Task is still being generated for you!{% endtrans %}</p>
+    {% else %}
+        {% if task.generator and current_user.user.is_organizer %}
+            <p>
+                <form method="post" action="{{ url_for('flush_task', task_name=task.name) }}">
+                    {{ flush_task_form.csrf_token }}
+                    <button>{% trans %}Flush{% endtrans %}</button>
+                </form>
+
+                <form method="post" action="{{ url_for('pregenerate_task', task_name=task.name) }}">
+                    {% trans %}Pregenerated tasks{% endtrans %}: {{ pregenerated_count }} <br>
+                    {{ pregenerate_task_form.csrf_token }}
+                    <p>{{ pregenerate_task_form.count.label }} {{ pregenerate_task_form.count }}</p>
+                    <button>{% trans %}Pregenerate{% endtrans %}</button>
+                </form>
+            </p>
+        {% endif %}
+
+        {{ summary.description | safe }}
+        {% if summary.attachments or summary.urls or summary.bullets %}
+            <ul>
+            {% for file_name in summary.attachments %}
+                <li><a href="{{ url_for('get_attachment', task_name=task.name, file_name=file_name) }}">{{ file_name }}</a></li>
+            {% endfor %}
+            {% for url in summary.urls %}
+                <li><a href="{{ url }}">{{ url }}</a></li>
+            {% endfor %}
+            {% for bullet in summary.bullets %}
+                <li>{{ bullet | safe }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if summary.hints %}
+            <div class="hints">
+            <h3>{% trans %}Hints{% endtrans %}</h3>
+            {% for hint, granted in summary.hints %}
+                <h4>{{ hint.name }}</h4>
+                {% if granted %}
+                    <p>{{ hint.text | safe }}</p>
+                {% else %}
+                    <form method="post" action="{{ url_for('ask_hint', task_name=task.name, hint_name=hint.name) }}">
+                        {{ hint_form.csrf_token }}
+                        <input type="submit" {% if task.solved %}disabled{% endif %} value="{% trans %}Request{% endtrans %}: −{{ hint.points }} {% trans %}pts.{% endtrans %}" />
+                    </form>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endif %}
+
+        <p style="font-size: 0.75em; font-weight: 500">{% trans %}Task author{% endtrans %} — {{ task.author }}.</p>
+    {% endif %}
+</main>
+{% endblock %}

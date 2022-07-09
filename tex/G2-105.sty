@@ -142,17 +142,17 @@
 \newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {3.2ex}%\GostAfterTitleSkip}
 \newlength\GostBeforNoTitleSkip  \setlength\GostBeforNoTitleSkip  {1.0ex}
 \newlength\GostHTitleSpace       \setlength\GostHTitleSpace       {2mm}
-\newlength\GostTitleIndent       \setlength\GostTitleIndent       {\parindent}
+\newlength\GostTitleIndent       \setlength\GostTitleIndent       {0mm}
 \newlength\Gost@ChapterIndent    \setlength\Gost@ChapterIndent    {\GostTitleIndent}
 \newlength\Gost@MainChapterIndent\setlength\Gost@MainChapterIndent{\parindent}
 \newlength{\Gost@TitleDropSkip}
  \setlength\Gost@TitleDropSkip{\GostBetweenTitleSkip}
  \addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
 %  стиль всех заголовков, \normalfont оставлен
-\newcommand\GostTitleStyle{\normalfont\bfseries}
-\newcommand\Gost@MainChapterStyle{\large}
+\newcommand\GostTitleStyle{\normalfont}
+\newcommand\Gost@MainChapterStyle{\large\centering}
 \newcommand\Gost@StructChapterStyle{\large\centering}
-\newcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}
+\newcommand\Gost@ChapterStyle{\large}
 
 % Part definition
 \newcounter{part}
@@ -223,18 +223,18 @@
     \@afterheading
 }
 \newcommand\@makechapterhead[1]{%
-  {\parindent \z@ \raggedright \normalfont
+  {\parindent \z@ \centering \normalfont
     \ifnum \c@secnumdepth >\m@ne
-    \hspace{\Gost@ChapterIndent}\Gost@MainChapterStyle%
+    \Gost@MainChapterStyle%
         \ifx\@chapapp\@empty%
-            \thechapter\hskip 5\p@%
+            Глава \thechapter\hskip 5\p@%
 %
         \else%
             \@chapapp\space\thechapter\hskip 5\p@%
         \fi
     \fi
     \interlinepenalty\@M
-    \Gost@ChapterStyle{#1}\par\nobreak
+    \Gost@ChapterStyle{\MakeUppercase{#1}}\par\nobreak
     \vspace{\GostAfterTitleSkip}
   }}
 \def\@schapter#1{
@@ -248,7 +248,7 @@
     \par
 
   }}
-\def\@chapapp{} % blank chapter prefix
+\def\@chapapp{} % chapter prefix
 
 
 \newcommand*\chaptermark[1]{}
@@ -335,7 +335,7 @@
 %  Нумеруются все заголовки
 \setcounter{secnumdepth}{3}
 %  в оглавлении- тоже могут быть все.
-\setcounter{tocdepth}{4} %% virens: обычно только первый подраздел
+\setcounter{tocdepth}{2} %% virens: обычно только первый подраздел
 
 \RequirePackage{xstring}
 
@@ -350,14 +350,14 @@
 
   \RequirePackage{cmap}%                             % теперь из pdf можно копипастить русский текст
   \RequirePackage[T2A]{fontenc}%                     % T1 по этой же причине, иначе акробату плохо.
-  \RequirePackage[utf8x]{inputenc}%
+  \RequirePackage[utf8]{inputenc}%
   \RequirePackage[english,russian]{babel}%
-  \RequirePackage{ucs}%                              %теперь из pdf можно копипастить русский текст
+  %%%\RequirePackage{ucs}%                              %теперь из pdf можно копипастить русский текст
 
   \InvisibleDashestrue
   \IfStrEq{\Gost@fonts}{times}{
-   \IfFileExists{cyrtimes.sty}{
-    \RequirePackage{cyrtimespatched}
+   \IfFileExists{tempora.sty}{
+    \RequirePackage{tempora}
     \InvisibleDashesfalse
    }{
     % apt-get install scalable-cyrfonts-tex

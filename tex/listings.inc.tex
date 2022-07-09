@@ -4,19 +4,27 @@
 
 % Значения по умолчанию
 \lstset{
-  basicstyle= \footnotesize,
+  numberbychapter=false,
+  basicstyle= \small\ttfamily,
   breakatwhitespace=true,% разрыв строк только на whitespacce
   breaklines=true,       % переносить длинные строки
 %   captionpos=b,          % подписи снизу -- вроде не надо
-  inputencoding=koi8-r,
-  numbers=left,          % нумерация слева
+  inputencoding=utf8,
+  basewidth=0.5em,
+  extendedchars=\true,
   numberstyle=\footnotesize,
   showspaces=false,      % показывать пробелы подчеркиваниями -- идиотизм 70-х годов
   showstringspaces=false,
   showtabs=false,        % и табы тоже
   stepnumber=1,
+  numbers=left,
+  numbersep=10pt,
   tabsize=4,              % кому нужны табы по 8 символов?
-  frame=single
+  frame=lines,
+  lineskip=0.1em,
+  keepspaces=true,
+  framexleftmargin=1.5em,
+  xleftmargin=1.5em
 }
 
 % Стиль для псевдокода: строчки обычно короткие, поэтому размер шрифта побольше
@@ -70,6 +78,25 @@
     {+}{\ensuremath{$^+$}~}2%
     {|}{\ensuremath{$|$}~}2%
 }[keywords,comments,strings]
+
+\lstdefinelanguage{Nix}{
+  % Anything betweeen $ becomes LaTeX math mode
+  mathescape=false,
+  % Comments may or not include Latex commands
+  texcl=false,
+  keywords=[1]{inherit,import,if,then,else,false,true,or,rec,let,in,assert,with},
+  % Comments delimiters, we do turn this off for the manual
+  % Spaces are not displayed as a special character
+  showstringspaces=false,
+  % String delimiters
+  morestring=[b]",
+  morestring=[d]'',
+  % Size of tabulations
+  tabsize=2,
+  % Enables ASCII chars 128 to 255
+  sensitive=true,
+  columns=[l]fixed,
+}
 
 % Подписи к листингам на русском языке.
 \renewcommand\lstlistingname{Листинг}

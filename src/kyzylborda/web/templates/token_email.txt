@@ -1,0 +1,8 @@
+{% trans %}Hi{% endtrans %},
+
+{% trans %}To login into scoreboard use this link{% endtrans %}:
+
+{{ link }}
+
+-- 
+{{ title }}

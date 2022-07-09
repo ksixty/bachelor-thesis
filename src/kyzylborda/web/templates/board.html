@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    {% if tasks %}
+        <main class="grid">
+        {% for task, summary in tasks %}
+            <div class="task {% if summary.solved %}solved {% if summary.solved_recently %}solved-now{% endif %}{% endif %}">
+                <span class="task-name"><a href="{{ url_for('get_task', task_name=task.name) }}">{{ task.title }}</a></span>
+                <span class="task-meta">{{ task.category }} ⋅ {{ task.points }}</span>
+            </div>
+        {% endfor %}
+        </main>
+    {% endif %}
+
+    {# if current_user.is_authenticated #}
+    {% if False and named_scoreboards %} {# TODO: not show the only named_scoreboard (default) #}
+        <div class="named-scoreboards">
+            {% for name, caption in named_scoreboards %}
+              <a href="{{ url_for('root', name=name) }}"
+                 class="{% if name == current_named_scoreboard %}current{% endif %}">
+                {{ caption }}
+              </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <div class="table-wrapper">
+        <table>
+            <colgroup>
+              <col style="width: 3.75em">
+              <col style="width: 2.75em">
+              <col style="width: 14em">
+              <col style="width: 4em">
+              <col style="width: 13.5em">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2"></th>
+                    <th>{% trans %}Team{% endtrans %}</th>
+                    <th>{% trans %}Points{% endtrans %}</th>
+                    <th>{% trans %}Last flag{% endtrans %}</th>
+                    {% if tasks %}
+                    {% for task, summary in tasks %}
+                        <th class="task">
+                            <span><a href="{{ url_for('get_task', task_name=task.name) }}"
+                                     title="{{ task.title }}">{{ task.name }}</a></span>
+                            <span>{{ task.points }}</span>
+                        </th>
+                    {% endfor %}
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in scores %}
+                    <tr{% if "academic" in user.tag_ranks and current_named_scoreboard != "academic" %} class="academic"{% endif %}>
+                        {% if user.is_disqualified %}
+                        <th colspan="2">Без мест</th>
+                        {% else %}
+                        <th>{{ user.tag_ranks['academic'] if 'academic' in user.tag_ranks and current_named_scoreboard != "academic" else '' }}</th>
+                        <th>{{ user.total_rank if user.total_rank else '' }}</th>
+                        {% endif %}
+                        <th>{{ user.name }}</th>
+                        <td>{{ user.points }}</td>
+                        <td class="tnum">
+                            {{ user.last_flag_time.astimezone(tz)|format_locale_datetime if user.last_flag_time else '' }}</td>
+                        {% if tasks %}
+                        {% for task, summary in tasks %}
+                            <td>{{ user.tasks[task.name].points if task.name in user.tasks else '' }}</td>
+                        {% endfor %}
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {# endif #}
+    <main style="margin-top: 2em;" class="narrow">
+      <h2 style="font-weight: 900; margin-bottom: 1em">Этот (убогий) конкурс подготовила команда [team Team]</h2>
+      <p>Нам стало очень скучно, и, кажется не мы одни такие здесь сегодня. Давайте знакомиться! Вообще, мы энтузиасты, цель которых — помогать новичкам, делая изучение компьютерных наук и современных технологий <i>веселее</i>.</p>
+      <p>Наш самый известный и важный проект — школьная олимпиада по защите информации <a href="https://ugractf.ru">Ugra CTF</a>, которая проходит по всей России: от Санкт-Петербурга до Владивостока.</p>
+      <p>Ещё мы написали учебник «<a href="https://course.ugractf.ru">Информационные технологии и их безопасность</a>», по которому более сотни человек смогли ворваться в основы всего, что бывает <i>в этих наших компьютерах</i> — и не только.</p>
+      <p>Мы также проводим выездные школы, например, в прошлом году мы разработали программу и прочитали для старшеклассников трек по ИБ в «<a href="https://practicingfutures.org/school_it_hmao">Школу информационных технологий</a>» вместе с Кружковым движением. Пишите — проведём и вам.</p>
+      <p>Нас можно поддержать:</p>
+      <ul>
+        <li>- предложить сделать что-нибудь вместе: <a href="mailto:sellout@teamteam.dev">sellout@teamteam.dev</a></li>
+        <li>- рассказать о <a href="https://ugractf.ru">Ugra CTF</a> знакомым школьникам</li>
+        <li>- <a href="https://www.tinkoff.ru/sl/6OIn6ZJep9e">подарить нам денег просто так</a></li>
+      </ul>
+
+    </main>
+
+{% endblock %}

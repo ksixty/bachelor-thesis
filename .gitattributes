@@ -1,4 +1,4 @@
-*.tex    diff=tex
+bi*.tex    diff=tex
 *.pdf filter=lfs diff=lfs merge=lfs -text
 rpz.pdf filter=lfs diff=lfs merge=lfs -text
 build/rpz.pdf filter=lfs diff=lfs merge=lfs -text

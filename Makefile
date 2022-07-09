@@ -9,6 +9,7 @@ PDFTRIMWHITE=pdfcrop
 
 # Output file
 PDF=rpz.pdf
+FINAL=bachelors-thesis-klimenko.pdf
 
 # Input paths
 DIA=graphics/dia
@@ -29,14 +30,10 @@ STYLES=$(TEX)/GostBase.clo $(TEX)/G7-32.sty $(TEX)/G7-32.cls $(TEX)/G2-105.sty
 PARTS_TEX = $(wildcard $(TEX)/[0-9][0-9]-*.tex)
 
 
-ifeq ($(firstword $(LATEX)), pdflatex)
-	CODE_CONVERTION=iconv -f UTF-8 -t KOI8-R
-else
-	CODE_CONVERTION=cat
-endif
+CODE_CONVERTION=cat
 
 
-all: $(PDF)
+all: $(FINAL)
 
 .PHONY: all tarball clean
 
@@ -52,12 +49,16 @@ MAIN_DEP=$(DEPS)/$(MAINTEX).tex-deps.mk
 
 $(PDF): $(TEX)/$(MAINTEX).tex $(STYLES) $(BIBFILE)
 	cp -r graphics/* $(INC)/*
+	cp -r src/* $(INC)/src/
 	cd tex && $(LATEX) $(MAINTEX)
-	cd tex && bibtex $(MAINTEX)
+	cd tex && biber $(MAINTEX)
 	cd tex && makeindex $(MAINTEX).nlo -s nomencl.ist -o $(MAINTEX).nls
 	cd tex && $(LATEX) $(MAINTEX)
 	cd tex && $(LATEX) $(MAINTEX)
 	cp tex/$(PDF) .
+
+$(FINAL): $(PDF)
+	pdfunite pre-pdf/* tex/$(PDF) $(FINAL)
 
 $(INC)/dia/%.pdf: $(DIA)/%.dia
 	mkdir -p $(INC)/dia
